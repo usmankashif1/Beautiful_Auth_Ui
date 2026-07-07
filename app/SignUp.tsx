@@ -4,6 +4,7 @@ import { router } from "expo-router";
 import { useState } from "react";
 import {
     Image,
+    ImageSourcePropType,
     StyleSheet,
     Text,
     TextInput,
@@ -12,8 +13,19 @@ import {
 } from "react-native";
 import { RF, RH, RS, RW } from "./components/responsive";
 
+
+const icons: Record<string, ImageSourcePropType> = {
+    user: require("../assets/images/userIcon.png"),
+    email: require("../assets/images/EmaiIcon.png"),
+    phone: require("../assets/images/phoneIcon.png"),
+    password: require("../assets/images/lockIcon.png"),
+};
+
+
 export default function SignUp() {
     const [focusedInput, setFocusedInput] = useState("");
+
+
 
     return (
         <LinearGradient colors={["#EABC63", "#EABC63"]} style={styles.container}>
@@ -26,7 +38,7 @@ export default function SignUp() {
                 <Text style={styles.subtitle}>Create a new account</Text>
 
                 <InputBox
-                    icon="user"
+                    type="user"
                     placeholder="Full name"
                     focused={focusedInput === "name"}
                     onFocus={() => setFocusedInput("name")}
@@ -34,7 +46,7 @@ export default function SignUp() {
                 />
 
                 <InputBox
-                    icon="mail"
+                    type="email"
                     placeholder="Email Address"
                     focused={focusedInput === "email"}
                     onFocus={() => setFocusedInput("email")}
@@ -43,7 +55,7 @@ export default function SignUp() {
                 />
 
                 <InputBox
-                    icon="phone"
+                    type="phone"
                     placeholder="Phone number"
                     focused={focusedInput === "phone"}
                     onFocus={() => setFocusedInput("phone")}
@@ -52,7 +64,7 @@ export default function SignUp() {
                 />
 
                 <InputBox
-                    icon="lock"
+                    type="password"
                     placeholder="Password"
                     focused={focusedInput === "password"}
                     onFocus={() => setFocusedInput("password")}
@@ -94,21 +106,34 @@ export default function SignUp() {
     );
 }
 
+
+type InputBoxProps = {
+    type: "user" | "email" | "phone" | "password";
+    placeholder: string;
+    focused: boolean;
+    onFocus: () => void;
+    onBlur: () => void;
+    keyboardType?: "default" | "email-address" | "phone-pad";
+    secureTextEntry?: boolean;
+};
+
 function InputBox({
-    icon,
+    type,
     placeholder,
     focused,
     onFocus,
     onBlur,
-    keyboardType,
-    secureTextEntry,
-}: any) {
+    keyboardType = "default",
+    secureTextEntry = false,
+}: InputBoxProps) {
     return (
         <View style={[styles.inputBox, focused && styles.inputBoxFocused]}>
-            <Feather
-                name={icon}
-                size={RS(20)}
-                color={focused ? "#EE8549" : "#333"}
+            <Image
+                source={icons[type]}
+                style={[
+                    styles.inputIcon,
+                    { tintColor: focused ? "#EE8549" : "#333" },
+                ]}
             />
 
             <TextInput
@@ -260,4 +285,10 @@ const styles = StyleSheet.create({
         fontSize: RF(14),
         textDecorationLine: "underline",
     },
+    inputIcon: {
+        width: 20,
+        height: 20,
+        resizeMode: "contain",
+    },
+
 });
