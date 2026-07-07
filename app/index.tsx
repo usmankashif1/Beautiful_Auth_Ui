@@ -2,6 +2,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
 import { useEffect } from "react";
 import { Image, StyleSheet } from "react-native";
+import { RH, RW } from "./components/responsive";
 
 export default function Index() {
   useEffect(() => {
@@ -29,8 +30,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logo: {
-    width: 120,
-    height: 120,
+    width: RW(120),
+    height: RH(120),
     resizeMode: "contain",
   },
 });

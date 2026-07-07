@@ -2,6 +2,7 @@ import { router } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { RF, RH, RS, RW } from "./components/responsive";
 
 export default function Login() {
   const [focusedInput, setFocusedInput] = useState("");
@@ -103,167 +104,162 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 34,
-    paddingTop: 105,
+    paddingHorizontal: RW(25),
+    paddingTop: RH(105),
     alignItems: "center",
   },
 
   logoWrapper: {
-    width: 100,
-    height: 80,
-    marginBottom: 40,
+    width: RW(100),
+    height: RH(80),
+    marginBottom: RH(40),
     alignItems: "center",
     justifyContent: "center",
   },
 
   logo: {
-    width: 120,
-    height: 120,
+    width: RW(120),
+    height: RH(120),
     resizeMode: "contain",
   },
 
   card: {
     width: "100%",
     backgroundColor: "#FFF3DF",
-    borderRadius: 14,
-    paddingHorizontal: 14,
-    paddingTop: 31,
-    paddingBottom: 25,
+    borderRadius: RS(14),
+    paddingHorizontal: RW(14),
+    paddingTop: RH(31),
+    paddingBottom: RH(30),
     alignItems: "center",
   },
 
   title: {
-    fontSize: 34,
+    fontSize: RF(34),
     fontWeight: "700",
     color: "#222",
-    marginBottom: 3,
+    marginBottom: RH(3),
   },
 
   subtitle: {
-    fontSize: 14,
+    fontSize: RF(14),
     color: "#333",
-    marginBottom: 23,
+    marginBottom: RH(23),
+  },
+
+  inputBox: {
+    width: "100%",
+    height: RH(48),
+    backgroundColor: "#fff",
+    borderRadius: RS(11),
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: RW(16),
+    marginBottom: RH(14),
+    borderWidth: RS(1.5),
+    borderColor: "transparent",
+  },
+
+  inputBoxFocused: {
+    borderColor: "#EE8549",
+  },
+
+  inputIcon: {
+    width: RW(20),
+    height: RH(20),
+    resizeMode: "contain",
   },
 
   input: {
     flex: 1,
     height: "100%",
-    marginLeft: 12,
-    fontSize: 14,
+    marginLeft: RW(12),
+    fontSize: RF(14),
     color: "#222",
     paddingVertical: 0,
     textAlignVertical: "center",
   },
 
-
   forgotWrapper: {
     alignSelf: "flex-end",
-    marginTop: 1,
-    marginBottom: 15,
+    marginTop: RH(1),
+    marginBottom: RH(15),
   },
 
   forgot: {
-    fontSize: 14,
+    fontSize: RF(14),
     color: "#333",
   },
+
   loginButton: {
     width: "100%",
-    height: 48,
+    height: RH(48),
     backgroundColor: "#ee8549",
-    borderRadius: 9,
+    borderRadius: RS(9),
     justifyContent: "center",
     alignItems: "center",
-
-    // iOS Shadow
     shadowColor: "#ee8549",
     shadowOffset: {
       width: 0,
-      height: 8,
+      height: RH(8),
     },
     shadowOpacity: 0.35,
-    shadowRadius: 14,
-
-    // Android Shadow
+    shadowRadius: RS(14),
     elevation: 8,
   },
 
   loginText: {
     color: "#fff",
-    fontSize: 14,
+    fontSize: RF(14),
     fontWeight: "700",
   },
 
   dividerRow: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 27,
-    marginBottom: 15,
+    marginTop: RH(27),
+    marginBottom: RH(15),
   },
 
   line: {
-    width: 72,
-    height: 1,
+    width: RW(72),
+    height: RH(1),
     backgroundColor: "#E8DCC8",
   },
 
   or: {
-    marginHorizontal: 20,
-    fontSize: 14,
+    marginHorizontal: RW(20),
+    fontSize: RF(14),
     color: "#333",
   },
 
   socialRow: {
     flexDirection: "row",
-    gap: 20,
+    gap: RW(20),
   },
 
   socialBox: {
-    width: 45,
-    height: 45,
-    borderRadius: 12,
+    width: RS(45),
+    height: RS(45),
+    borderRadius: RS(12),
     backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
   },
 
   google: {
-    width: 52,
-    height: 52,
+    width: RS(52),
+    height: RS(52),
   },
 
   facebook: {
-    width: 52,
-    height: 52,
-
+    width: RS(52),
+    height: RS(52),
   },
 
   createAccount: {
-    marginTop: 27,
+    marginTop: RH(27),
     color: "#EE8549",
-    fontSize: 14,
+    fontSize: RF(14),
     textDecorationLine: "underline",
-  },
-  inputIcon: {
-    width: 20,
-    height: 20,
-    resizeMode: "contain",
-  },
-
-  inputBox: {
-    width: "100%",
-    height: 48,
-    backgroundColor: "#fff",
-    borderRadius: 11,
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 16,
-    marginBottom: 14,
-
-    borderWidth: 1.5,
-    borderColor: "transparent",
-  },
-
-  inputBoxFocused: {
-    borderColor: "#EE8549",
   },
 });

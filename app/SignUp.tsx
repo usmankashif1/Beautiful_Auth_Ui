@@ -10,6 +10,7 @@ import {
     TouchableOpacity,
     View,
 } from "react-native";
+import { RF, RH, RS, RW } from "./components/responsive";
 
 export default function SignUp() {
     const [focusedInput, setFocusedInput] = useState("");
@@ -17,7 +18,7 @@ export default function SignUp() {
     return (
         <LinearGradient colors={["#EABC63", "#EABC63"]} style={styles.container}>
             <TouchableOpacity style={styles.backButton} onPress={() => router.navigate("/Login")}>
-                <Feather name="arrow-left" size={22} color="#EE8549" />
+                <Feather name="arrow-left" size={RS(22)} color="#EE8549" />
             </TouchableOpacity>
 
             <View style={styles.card}>
@@ -86,7 +87,7 @@ export default function SignUp() {
                 </View>
             </View>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => router.navigate("/Login")}>
                 <Text style={styles.loginText}>Login</Text>
             </TouchableOpacity>
         </LinearGradient>
@@ -106,7 +107,7 @@ function InputBox({
         <View style={[styles.inputBox, focused && styles.inputBoxFocused]}>
             <Feather
                 name={icon}
-                size={20}
+                size={RS(20)}
                 color={focused ? "#EE8549" : "#333"}
             />
 
@@ -127,55 +128,55 @@ function InputBox({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 50,
-        paddingTop: 103,
+        paddingHorizontal: RW(25),
+        paddingTop: RH(103),
         alignItems: "center",
     },
 
     backButton: {
-        width: 30,
-        height: 30,
-        borderRadius: 8,
+        width: RW(30),
+        height: RH(30),
+        borderRadius: RS(8),
         backgroundColor: "#FFF3DF",
         justifyContent: "center",
         alignItems: "center",
         alignSelf: "flex-start",
-        marginBottom: 18,
+        marginBottom: RH(18),
     },
 
     card: {
         width: "100%",
         backgroundColor: "#FFF3DF",
-        borderRadius: 12,
-        paddingHorizontal: 14,
-        paddingTop: 19,
-        paddingBottom: 8,
+        borderRadius: RS(12),
+        paddingHorizontal: RW(14),
+        paddingTop: RH(19),
+        paddingBottom: RH(30),
         alignItems: "center",
     },
 
     title: {
-        fontSize: 33,
+        fontSize: RF(33),
         fontWeight: "700",
         color: "#151515",
-        marginBottom: 2,
+        marginBottom: RH(2),
     },
 
     subtitle: {
-        fontSize: 14,
+        fontSize: RF(14),
         color: "#333",
-        marginBottom: 23,
+        marginBottom: RH(23),
     },
 
     inputBox: {
         width: "100%",
-        height: 46,
+        height: RH(46),
         backgroundColor: "#fff",
-        borderRadius: 10,
+        borderRadius: RS(10),
         flexDirection: "row",
         alignItems: "center",
-        paddingHorizontal: 16,
-        marginBottom: 14,
-        borderWidth: 1.5,
+        paddingHorizontal: RW(16),
+        marginBottom: RH(14),
+        borderWidth: RS(1.5),
         borderColor: "transparent",
     },
 
@@ -186,8 +187,8 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         height: "100%",
-        marginLeft: 13,
-        fontSize: 14,
+        marginLeft: RW(13),
+        fontSize: RF(14),
         color: "#222",
         paddingVertical: 0,
         textAlignVertical: "center",
@@ -195,69 +196,68 @@ const styles = StyleSheet.create({
 
     createButton: {
         width: "100%",
-        height: 46,
+        height: RH(46),
         backgroundColor: "#EE8549",
-        borderRadius: 9,
+        borderRadius: RS(9),
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 1,
-
+        marginTop: RH(1),
         shadowColor: "#EE8549",
-        shadowOffset: { width: 0, height: 8 },
+        shadowOffset: { width: 0, height: RH(8) },
         shadowOpacity: 0.3,
-        shadowRadius: 14,
+        shadowRadius: RS(14),
         elevation: 8,
     },
 
     createButtonText: {
         color: "#fff",
-        fontSize: 14,
+        fontSize: RF(14),
         fontWeight: "700",
     },
 
     dividerRow: {
         flexDirection: "row",
         alignItems: "center",
-        marginTop: 27,
-        marginBottom: 15,
+        marginTop: RH(27),
+        marginBottom: RH(15),
     },
 
     line: {
-        width: 68,
-        height: 1,
+        width: RW(68),
+        height: RH(1),
         backgroundColor: "#E8DCC8",
     },
 
     or: {
-        marginHorizontal: 20,
-        fontSize: 14,
+        marginHorizontal: RW(20),
+        fontSize: RF(14),
         color: "#333",
     },
 
     socialRow: {
         flexDirection: "row",
-        gap: 15,
+        gap: RW(15),
     },
 
     socialBox: {
-        width: 42,
-        height: 42,
-        borderRadius: 11,
+        width: RW(42),
+        height: RH(42),
+        borderRadius: RS(11),
         backgroundColor: "#fff",
         justifyContent: "center",
         alignItems: "center",
     },
 
     socialIcon: {
-        width: 42,
-        height: 42,
+        width: RW(42),
+        height: RH(42),
         resizeMode: "contain",
     },
 
     loginText: {
-        marginTop: 39,
+        marginTop: RH(39),
         color: "#EE8549",
-        fontSize: 14,
+        fontSize: RF(14),
         textDecorationLine: "underline",
     },
 });
