@@ -36,8 +36,8 @@ A modern and elegant authentication UI built with **React Native**, **Expo**, an
 &nbsp;
 <img src="https://github.com/user-attachments/assets/96b9bb13-ff2a-499a-9beb-dacefe8b9db1" width="220"/>
 &nbsp;
-<img src="https://github.com/user-attachments/assets/f6520fff-0960-4c19-8e95-8405a0ea9711" width="220"/>
-<br><br><img src="https://github.com/user-attachments/assets/14e3422c-0854-4ef9-8e93-f705194b8b1a" width="220"/>
+<br><br><img src="https://github.com/user-attachments/assets/f6520fff-0960-4c19-8e95-8405a0ea9711" width="220"/>
+  <img src="https://github.com/user-attachments/assets/14e3422c-0854-4ef9-8e93-f705194b8b1a" width="220"/>
 </div>
 
 ## 🚀 Getting Started
