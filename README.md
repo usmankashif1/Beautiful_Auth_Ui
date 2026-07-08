@@ -44,7 +44,7 @@ A modern and elegant authentication UI built with **React Native**, **Expo**, an
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/your-username/Beautiful_Auth_Ui.git
+git clone https://github.com/usmankashif1/Beautiful_Auth_Ui.git
 
 cd Beautiful_Auth_Ui
 
